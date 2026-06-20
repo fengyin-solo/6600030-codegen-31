@@ -37,3 +37,19 @@ export interface FEAResult {
   maxStress: number;
   reactionForces: { nodeId: number; fx: number; fy: number }[];
 }
+
+export interface Material {
+  id: string;
+  name: string;
+  youngsModulus: number;   // Pa
+  density?: number;        // kg/m³
+  yieldStrength?: number;  // Pa
+  color: string;
+  description?: string;
+}
+
+export interface MaterialPlanResult {
+  materialId: string;
+  result: FEAResult;
+  timestamp: number;
+}
